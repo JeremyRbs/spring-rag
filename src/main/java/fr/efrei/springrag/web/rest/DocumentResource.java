@@ -18,8 +18,6 @@ import java.util.List;
 public class DocumentResource {
 
     private final DocumentService documentService;
-
-
     private final Logger log = LoggerFactory.getLogger(DocumentService.class);
 
     public DocumentResource(DocumentService documentService) {
@@ -36,11 +34,15 @@ public class DocumentResource {
                 .body(result);
     }
 
+    @PostMapping("/documents/chat2/{user}")
+    public String chat2(@RequestBody String query) throws InterruptedException {
+        String result = documentService.chat(query);
+        return result;
+    }
+
     @GetMapping("/documents")
     public List<Document> getAllDocuments() {
         log.debug("REST request to get all Documents");
         return documentService.findAll();
     }
-
-
 }
