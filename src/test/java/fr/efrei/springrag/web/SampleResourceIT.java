@@ -1,4 +1,4 @@
-package fr.efrei.springrag.web.rest;
+package fr.efrei.springrag.web;
 
 import fr.efrei.springrag.SpringragApplication;
 import org.junit.jupiter.api.Test;
